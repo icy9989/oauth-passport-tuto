@@ -8,8 +8,16 @@
     <body>
         <nav class="p-3">
             <a class="btn btn-primary" href="/">HOME</a>
-            <a class="btn btn-primary mx-3" href="/auth/login">LOG IN</a>
-            <button class="btn btn-primary">LOG OUT</button>
+            <% if(!user) { 
+                %>
+                    <a class="btn btn-primary mx-3" href="/auth/login">LOG IN</a>
+                <%
+            } else {
+                %>
+                    <a class="btn btn-primary mx-3" href="/auth/logout">LOG OUT</a>
+                <%
+            } %>
+            <a class="btn btn-primary mx-3" href="/profile">PROFILE</a>
         </nav>
         <P class="p-3">🏠 This is homepage!</P>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
